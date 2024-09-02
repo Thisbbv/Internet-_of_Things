@@ -1,0 +1,44 @@
+// C++ code
+//
+int LDR=0;
+int LED=9;
+
+
+void setup()
+{
+  
+ pinMode(A0, INPUT);
+  pinMode(LED, OUTPUT);
+  Serial.begin(9600);
+  //pinMode(LED_BUILTIN, OUTPUT);
+}
+
+
+
+void loop()
+{
+  int LDR = analogRead(A0);
+  
+  
+  if (LDR<650) {
+    digitalWrite(LED, HIGH); 
+    Serial.println("LED ligado");}
+  
+  else{
+      digitalWrite(LED, LOW); 
+    Serial.println("LED desligado");}
+    delay(1000);
+    
+  
+  
+  
+  
+  //digitalWrite(LED_BUILTIN, HIGH);
+  //delay(1000); // Wait for 1000 millisecond(s)
+  //digitalWrite(LED_BUILTIN, LOW);
+  //delay(1000); // Wait for 1000 millisecond(s)
+  
+  
+  
+  
+}
