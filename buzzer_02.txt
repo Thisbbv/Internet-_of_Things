@@ -1,0 +1,50 @@
+int buzzer = 8;//atribui o valor 8 a variável buzzer
+int i = 0;// variável para contar o numero de vezes que o buzzer toca
+#define R 3
+#define B 5
+#define G 6
+void setup()
+{
+ 
+   pinMode(R, OUTPUT);
+  pinMode(G, OUTPUT);
+  pinMode(B, OUTPUT);
+  pinMode(buzzer, OUTPUT);
+    Serial.begin (9600);
+  
+}
+
+void loop()
+{
+     
+  
+    //liga verde
+     analogWrite(R, 0);
+     analogWrite(G, 255);
+     analogWrite(B, 0);
+     noTone (buzzer);//desligando o buzzer
+     delay(500);//intervalo de 500 milisegundos
+     tone (buzzer, 700, 1000);//ligando o buzzer e definindo "200" como a frequencia e "5000" a duração
+     delay(500);//intervalo de 500 milisegundos
+     noTone (buzzer);//desligando o buzzer
+     delay(500);//intervalo de 500 milisegundos
+  
+     //LIGA AZUL
+     analogWrite(R, 0);
+     analogWrite(G, 0);
+     analogWrite(B, 255);    
+     tone (buzzer, 1000, 1000);//ligando o buzzer e definindo "200" como a frequencia e "5000" a duração
+     delay(500);//intervalo de 500 milisegundos
+     noTone (buzzer);//desligando o buzzer
+     delay(500);//intervalo de 500 milisegundos
+      
+     // LIGA VERMELHO
+     analogWrite(G, 0);
+     analogWrite(B, 0);
+     analogWrite(R, 255);
+     tone (buzzer, 1500, 1000);//ligando o buzzer e definindo "200" como a frequencia e "5000" a duração
+     delay(500);//intervalo de 500 milisegundos
+     noTone (buzzer);//desligando o buzzer
+     delay(500);//intervalo de 500 milisegundos
+  }
+  
