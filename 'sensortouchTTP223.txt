@@ -1,0 +1,25 @@
+#include <Wire.h>
+
+int TOUCH = 9;
+
+void setup()
+{
+  pinMode(8, OUTPUT); // LED
+  pinMode(9, INPUT); // TOUCH
+  Serial.begin(9600);
+}
+
+void loop()
+{
+  
+  int sensor_touch = digitalRead(TOUCH);
+Serial.println(sensor_touch);
+if (sensor_touch == HIGH){
+   digitalWrite(8, HIGH);
+  
+}
+else{
+  digitalWrite(8, LOW);
+}
+
+}
